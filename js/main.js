@@ -80,7 +80,7 @@ function createQuest() {
 function printQuestion() {
 	var questionPos = getRandomInt(0, NUM_OF_FLAGS - 1);
 	var theQuestion = gQuests[questionPos];
-	var strHTML = `<div class="question-area">\n<img class="question-img"src="/img/flags/${theQuestion.correctAns.id}.jpg" />\n</div>\n <div class="answers-area">`;
+	var strHTML = `<div class="question-area">\n<img class="question-img"src="../img/flags/${theQuestion.correctAns.id}.jpg" />\n</div>\n <div class="answers-area">`;
 	for (var i = 0; i < theQuestion.options.length; i++) {
 		strHTML += `<button class="btn option" data-option="${i+1}" onclick="handleClickedAnswer(this, ${questionPos})">
         ${theQuestion.options[i].name}</button>\n`;
@@ -107,7 +107,7 @@ function gameOver() {
 		gCorrectAnswersCounter > 0
 			? `nonZeroCorrectAnswers.gif`
 			: `zeroCorrectAnswers.gif`;
-	document.querySelector('.game-area').innerHTML = `<img src="img/${imgUrl}" width="250px" />
+	document.querySelector('.game-area').innerHTML = `<img src="../img/${imgUrl}" width="250px" />
 	<h1>You answered correctly ${gCorrectAnswersCounter} times!</h1>`;
 	document.querySelector('.play').innerText = 'Play Again 🔁';
 }
